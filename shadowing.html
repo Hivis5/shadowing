@@ -37,8 +37,6 @@ greet();
 
 3) Issues with var
 
-No that we have understood different concepts related to var , let us discuss the issues with var and why you should avoid using it.
-
 Let us take an example:
 
 var greetings = 'Hello John';
@@ -105,4 +103,17 @@ The above program was translated by JavaScript interpreter as if var msg was hoi
 
 greet();
 console.log(msg);
+
+5) Temporal Dead Zone explained
+
+This is what the TDZ is: the term to describe the state where variables are un-reachable. They are in scope, but they aren't declared.
+
+The let and const variables exist in the TDZ from the start of their enclosing scope until they are declared.
+
+You could also say that the variables exist in the TDZ from the place they get bound (when the variable gets bound to the scope it's inside)
+until it is declared (when a name is reserved in memory for that variable).
+
+You can see above that if I accessed the age variable earlier than its declaration, it would throw a ReferenceError. Because of the TDZ.
+
+But var won't do that. var is just default initialized to undefined unlike the other declaration
 -->
